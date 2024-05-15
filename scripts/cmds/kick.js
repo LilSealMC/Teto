@@ -1,22 +1,18 @@
 module.exports = {
 	config: {
 		name: "kick",
-		version: "1.1",
+		version: "1.3",
 		author: "NTKhang",
 		countDown: 5,
 		role: 1,
-		shortDescription: {
-			vi: "Kick thành viên",
-			en: "Kick member"
-		},
-		longDescription: {
+		description: {
 			vi: "Kick thành viên khỏi box chat",
 			en: "Kick member out of chat box"
 		},
 		category: "box chat",
 		guide: {
-			vi: "{pn} @tags: dùng để kick những người được tag",
-			en: "{pn} @tags: use to kick members who are tagged"
+			vi: "   {pn} @tags: dùng để kick những người được tag",
+			en: "   {pn} @tags: use to kick members who are tagged"
 		}
 	},
 
@@ -32,7 +28,7 @@ module.exports = {
 	onStart: async function ({ message, event, args, threadsData, api, getLang }) {
 		const adminIDs = await threadsData.get(event.threadID, "adminIDs");
 		if (!adminIDs.includes(api.getCurrentUserID()))
-			return message.reply();
+			return message.reply(getLang("needAdmin"));
 		async function kickAndCheckError(uid) {
 			try {
 				await api.removeUserFromGroup(uid, event.threadID);

@@ -1,15 +1,11 @@
 module.exports = {
 	config: {
 		name: "count",
-		version: "1.1",
+		version: "1.3",
 		author: "NTKhang",
 		countDown: 5,
 		role: 0,
-		shortDescription: {
-			vi: "Xem tin nhắn nhóm",
-			en: "View group messages"
-		},
-		longDescription: {
+		description: {
 			vi: "Xem số lượng tin nhắn của tất cả thành viên hoặc bản thân (tính từ lúc bot vào nhóm)",
 			en: "View the number of messages of all members or yourself (since the bot joined the group)"
 		},
@@ -86,8 +82,9 @@ module.exports = {
 							msg += `\n${item.stt}/ ${item.name}: ${item.count}`;
 					}
 					msg += getLang("page", page, splitPage.totalPage)
-						+ "\n" + getLang("reply")
-						+ "\n\n" + endMessage;
+						+ `\n${getLang("reply")}`
+						+ `\n\n${endMessage}`;
+
 					return message.reply(msg, (err, info) => {
 						if (err)
 							return message.err(err);
@@ -149,7 +146,7 @@ module.exports = {
 
 	onChat: async ({ usersData, threadsData, event }) => {
 		const { senderID, threadID } = event;
-		const { members } = await threadsData.get(threadID);
+		const members = await threadsData.get(threadID, "members");
 		const findMember = members.find(user => user.userID == senderID);
 		if (!findMember) {
 			members.push({
@@ -162,7 +159,7 @@ module.exports = {
 		}
 		else
 			findMember.count += 1;
-		await threadsData.set(threadID, { members });
+		await threadsData.set(threadID, members, "members");
 	}
 
 };

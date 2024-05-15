@@ -3,7 +3,7 @@ const axios = require("axios");
 const path = require("path");
 const { getPrefix } = global.utils;
 const { commands, aliases } = global.GoatBot;
-const doNotDelete = "[ 🐐 | Goat Bot V2 ]";
+const doNotDelete = "【重音テト-Prototype】";
 /** 
 * @author NTKhang
 * @author: do not delete it
@@ -13,6 +13,7 @@ const doNotDelete = "[ 🐐 | Goat Bot V2 ]";
 module.exports = {
 	config: {
 		name: "help",
+		aliases: ["help"],
 		version: "1.15",
 		author: "NTKhang",
 		countDown: 5,
@@ -28,11 +29,10 @@ module.exports = {
 		category: "info",
 		guide: {
 			vi: "   {pn} [để trống | <số trang> | <tên lệnh>]"
-				+ "\n   {pn} <command name> [-u | usage | -g | guide]: chỉ hiển thị phần hướng dẫn sử dụng lệnh"
-				+ "\n   {pn} <command name> [-i | info]: chỉ hiển thị phần thông tin về lệnh"
+				+ "\n   {pn} <command name> [-u | usage | -g | guide]: chỉ hiển thị phần hướng dupn} <command name> [-i | info]: chỉ hiển thị phần thông tin về lệnh"
 				+ "\n   {pn} <command name> [-r | role]: chỉ hiển thị phần quyền hạn của lệnh"
 				+ "\n   {pn} <command name> [-a | alias]: chỉ hiển thị phần tên viết tắt của lệnh",
-			en: "{pn} [empty | <page number> | <command name>]"
+			en: "{pn} [empty • <page number> | <command name>]"
 				+ "\n   {pn} <command name> [-u | usage | -g | guide]: only show command usage"
 				+ "\n   {pn} <command name> [-i | info]: only show command info"
 				+ "\n   {pn} <command name> [-r | role]: only show command role"
@@ -60,13 +60,13 @@ module.exports = {
 			pageNotFound: "Trang %1 không tồn tại"
 		},
 		en: {
-			help: "╭─────────────⭓\n%1\n├─────⭔\n│ Page [ %2/%3 ]\n│ Currently, the bot has %4 commands that can be used\n│ » Type %5help <page> to view the command list\n│ » Type %5help to view the details of how to use that command\n├────────⭔\n│ %6\n╰─────────────⭓",
-			help2: "%1├───────⭔\n│ » Currently, the bot has %2 commands that can be used\n│ » Type %3help <command name> to view the details of how to use that command\n│ %4\n╰─────────────⭓",
-			commandNotFound: "Command \"%1\" does not exist",
-			getInfoCommand: "╭── NAME ────⭓\n│ %1\n├── INFO\n│ Description: %2\n│ Other names: %3\n│ Other names in your group: %4\n│ Version: %5\n│ Role: %6\n│ Time per command: %7s\n│ Author: %8\n├── Usage\n%9\n├── Notes\n│ The content inside <XXXXX> can be changed\n│ The content inside [a|b|c] is a or b or c\n╰──────⭔",
+			help: "𝗟𝗶𝘀𝘁 𝗼𝗳 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀\nコマンドリスト\n────────%1\n𝗠𝗲𝘀𝘀𝗮𝗴𝗲 𝗳𝗿𝗼𝗺 𝗧𝗲𝘁𝗼\nテトからのメッセージ\n────────\nHeres the Command List have fun using me as a ChatBot(≧▽≦)\n────────\n𝗣𝗮𝗴𝗲𝘀 𝗮𝗻𝗱 𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗖𝗼𝘂𝗻𝘁\nページとコマンドの数\n────────\nPages: [ %2/%3 ]\nCommand Count: %4\n────────\n %6\n────────",
+			help2: "Currently, Teto has %2 command that can be used\n────────\nType %3𝗵𝗲𝗹𝗽 [ 𝗰𝗼𝗺𝗺𝗮𝗻𝗱 𝗻𝗮𝗺𝗲 ] to view the details of how to use that 𝗰𝗼𝗺𝗺𝗮𝗻𝗱",
+			commandNotFound: "𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗻𝗼𝘁 𝗳𝗼𝘂𝗻𝗱\n────────\n\"%1\" doesnt exist\n────────\n",
+			getInfoCommand: "𝗜𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻\n情報\n────────\n 【 %1 】 \n 𝗗𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻: %2\n 𝗔𝗹𝗶𝗮𝘀𝗲𝘀: %3\n 𝗖𝘂𝘀𝘁𝗼𝗺 𝗔𝗹𝗶𝗮𝘀𝗲𝘀: %4\n 𝗩𝗲𝗿: %5\n 𝗥𝗼𝗹𝗲: %6\n 𝗗𝗲𝗹𝗮𝘆: %7s\n 𝗔𝘂𝘁𝗵𝗼𝗿: %8\n 𝗨𝘀𝗮𝗴𝗲\n%9\n 𝗡𝗼𝘁𝗲𝘀\n The content inside  [ XXXXX ] can be changed\n The content inside [𝗮|𝗯|𝗰] is 𝗮 or 𝗯 or 𝗰\n────────\n",
 			onlyInfo: "╭── INFO ────⭓\n│ Command name: %1\n│ Description: %2\n│ Other names: %3\n│ Other names in your group: %4\n│ Version: %5\n│ Role: %6\n│ Time per command: %7s\n│ Author: %8\n╰─────────────⭓",
-			onlyUsage: "╭── USAGE ────⭓\n│%1\n╰─────────────⭓",
-			onlyAlias: "╭── ALIAS ────⭓\n│ Other names: %1\n│ Other names in your group: %2\n╰─────────────⭓",
+			onlyUsage: "╭── USAGE ────⭓\n%1\n╰─────────────⭓",
+			onlyAlias: "╭── ALIAS ────⭓\n Other names: %1\n Other names in your group: %2\n╰─────────────⭓",
 			onlyRole: "╭── ROLE ────⭓\n│%1\n╰─────────────⭓",
 			doNotHave: "Do not have",
 			roleText0: "0 (All users)",
@@ -74,7 +74,7 @@ module.exports = {
 			roleText2: "2 (Admin bot)",
 			roleText0setRole: "0 (set role, all users)",
 			roleText1setRole: "1 (set role, group administrators)",
-			pageNotFound: "Page %1 does not exist"
+			pageNotFound: "𝗣𝗮𝗴𝗲 𝗻𝗼𝘁 𝗳𝗼𝘂𝗻𝗱\n────────\nPage %1 does not exist\n────────\n"
 		}
 	},
 
@@ -90,7 +90,7 @@ module.exports = {
 		let sortHelp = threadData.settings.sortHelp || "name";
 		if (!["category", "name"].includes(sortHelp))
 			sortHelp = "name";
-		const commandName = (args[0] || "").toLowerCase();
+		const commandName = (args[0]  || "").toLowerCase();
 		const command = commands.get(commandName) || commands.get(aliases.get(commandName));
 		// ———————————————— LIST ALL COMMAND ——————————————— //
 		if (!command && !args[0] || !isNaN(args[0])) {
@@ -98,7 +98,7 @@ module.exports = {
 			let msg = "";
 			if (sortHelp == "name") {
 				const page = parseInt(args[0]) || 1;
-				const numberOfOnePage = 30;
+				const numberOfOnePage = 10;
 				for (const [name, value] of commands) {
 					if (value.config.role > 1 && role < value.config.role)
 						continue;
@@ -110,7 +110,7 @@ module.exports = {
 					else if (value.config.shortDescription)
 						shortDescription = checkLangObject(value.config.shortDescription, langCode);
 					if (shortDescription)
-						describe += `: ${cropContent(shortDescription.charAt(0).toUpperCase() + shortDescription.slice(1))}`;
+						describe += `: ${cropContent(shortDescription.charAt(0).toUpperCase() + shortDescription.slice(1))}\n────────`;
 					arrayInfo.push({
 						data: describe,
 						priority: value.priority || 0
@@ -123,7 +123,7 @@ module.exports = {
 					return message.reply(getLang("pageNotFound", page));
 				const returnArray = allPage[page - 1] || [];
 				const startNumber = (page - 1) * numberOfOnePage + 1;
-				msg += (returnArray || []).reduce((text, item, index) => text += `│ ${index + startNumber}${index + startNumber < 10 ? " " : ""}. ${item.data}\n`, '').slice(0, -1);
+				msg += (returnArray || []).reduce((text, item, index) => text += `\n•${item.data}`, '').slice(0, -1);
 				await message.reply(getLang("help", msg, page, totalPage, commands.size, prefix, doNotDelete));
 			}
 			else if (sortHelp == "category") {
@@ -143,7 +143,7 @@ module.exports = {
 				arrayInfo.sort((a, b) => (a.category < b.category ? -1 : 1));
 				arrayInfo.forEach((data, index) => {
 					const categoryUpcase = `${index == 0 ? `╭` : `├`}─── ${data.category.toUpperCase()} ${index == 0 ? "⭓" : "⭔"}`;
-					data.names = data.names.sort().map(item => item = `│ ${item}`);
+					data.names = data.names.sort().map(item => item = `• ${item}`);
 					msg += `${categoryUpcase}\n${data.names.join("\n")}\n`;
 				});
 				message.reply(getLang("help2", msg, commands.size, prefix, doNotDelete));

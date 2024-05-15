@@ -7,15 +7,11 @@ function checkShortCut(nickname, uid, userName) {
 module.exports = {
 	config: {
 		name: "autosetname",
-		version: "1.1",
+		version: "1.3",
 		author: "NTKhang",
 		cooldowns: 5,
 		role: 1,
-		shortDescription: {
-			vi: "Tự đổi biệt danh thành viên mới",
-			en: "Auto change nickname of new member"
-		},
-		longDescription: {
+		description: {
 			vi: "Tự đổi biệt danh cho thành viên mới vào nhóm chat",
 			en: "Auto change nickname of new member"
 		},
@@ -96,13 +92,6 @@ module.exports = {
 
 		return async function () {
 			const addedParticipants = [...event.logMessageData.addedParticipants];
-			try {
-				const { userFbId: uid, fullName: userName } = addedParticipants.splice(-1)[0];
-				await api.changeNickname(checkShortCut(configAutoSetName, uid, userName), event.threadID, uid);
-			}
-			catch (err) {
-				return message.reply(getLang("error"));
-			}
 
 			for (const user of addedParticipants) {
 				const { userFbId: uid, fullName: userName } = user;
@@ -110,7 +99,7 @@ module.exports = {
 					await api.changeNickname(checkShortCut(configAutoSetName, uid, userName), event.threadID, uid);
 				}
 				catch (e) {
-
+					return message.reply(getLang("error"));
 				}
 			}
 		};

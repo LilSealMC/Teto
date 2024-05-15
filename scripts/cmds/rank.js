@@ -1,4 +1,5 @@
 const Canvas = require("canvas");
+const { uploadZippyshare } = global.utils;
 
 const defaultFontName = "BeVietnamPro-SemiBold";
 const defaultPathFontName = `${__dirname}/assets/font/BeVietnamPro-SemiBold.ttf`;
@@ -20,15 +21,11 @@ global.client.makeRankCard = makeRankCard;
 module.exports = {
 	config: {
 		name: "rank",
-		version: "1.5",
+		version: "1.7",
 		author: "NTKhang",
 		countDown: 5,
 		role: 0,
-		shortDescription: {
-			vi: "Xem level của người dùng",
-			en: "View level of user"
-		},
-		longDescription: {
+		description: {
 			vi: "Xem level của bạn hoặc người được tag. Có thể tag nhiều người",
 			en: "View your level or the level of the tagged person. You can tag many people"
 		},
@@ -94,7 +91,7 @@ async function makeRankCard(userID, usersData, threadsData, threadID, deltaNext,
 	const expNextLevel = levelToExp(levelUser + 1, deltaNext) - levelToExp(levelUser, deltaNext);
 	const currentExp = expNextLevel - (levelToExp(levelUser + 1, deltaNext) - exp);
 
-	const allUser = usersData.getAll();
+	const allUser = await usersData.getAll();
 	allUser.sort((a, b) => b.exp - a.exp);
 	const rank = allUser.findIndex(user => user.userID == userID) + 1;
 
@@ -834,7 +831,7 @@ class RankCard {
 			+------------------------------------+
 		*/
 		ctx.globalCompositeOperation = "destination-over";
-		if (main_color.match?.(/^https?:\/\//)) {
+		if (main_color.match?.(/^https?:\/\//) || Buffer.isBuffer(main_color)) {
 			ctx.beginPath();
 			ctx.moveTo(radius, 0);
 			ctx.lineTo(widthCard - radius, 0);
