@@ -16,7 +16,7 @@ module.exports = {
 		author: "NTKhang",
 		countDown: 5,
 		role: 0,
-		description: {
+		shortDescription: {
 			vi: "xem ảnh mặt trăng vào đêm bạn chọn (dd/mm/yyyy)",
 			en: "view moon image on the night you choose (dd/mm/yyyy)"
 		},

@@ -7,7 +7,7 @@ module.exports = {
 		author: "NTKhang",
 		countDown: 5,
 		role: 0,
-		description: {
+		shortDescription: {
 			vi: "Quản lý các nhóm chat trong hệ thống bot",
 			en: "Manage group chat in bot system"
 		},

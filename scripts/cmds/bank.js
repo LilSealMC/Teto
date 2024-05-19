@@ -145,7 +145,7 @@ bankData[user].lastInterestClaimed = currentTime;
   });
   return message.reply(`${amount} converted to the recipient with id ${recipientUID}.`);
 } else {
-  return message.reply("𝗕𝗮𝗻𝗸\n────────\nThe following services are available:\n𝗱𝗲𝗽𝗼𝘀𝗶𝘁: Put money into the bank.\n𝘄𝗶𝗱𝗿𝗮𝘄: withdraw money from the bank from your account.\n𝘀𝗵𝗼𝘄: Show the amount of your bank account.\n𝗶𝗻𝘁𝗲𝗿𝗲𝘀𝘁: You get good interest. \n────────\n𝗡𝗢𝗧𝗘: use 𝗵𝗲𝗹𝗽 bank to know how to use.\n────────\n");
+  return message.reply("𝗕𝗮𝗻𝗸\n────────\nThe following services are available:\n𝗱𝗲𝗽𝗼𝘀𝗶𝘁: Put money into the bank.\n𝘄𝗶𝘁𝗵𝗱𝗿𝗮𝘄: withdraw money from the bank from your account.\n𝘀𝗵𝗼𝘄: Show the amount of your bank account.\n𝗶𝗻𝘁𝗲𝗿𝗲𝘀𝘁: You get good interest. \n────────\n𝗡𝗢𝗧𝗘: use ^help bank to know how to use the command\n────────\n");
 } 
 }
 };

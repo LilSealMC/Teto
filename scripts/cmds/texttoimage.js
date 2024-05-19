@@ -8,7 +8,7 @@ module.exports = {
 		author: "NTKhang",
 		countDown: 5,
 		role: 0,
-		description: {
+		shortDescription: {
 			uid: "Tạo ảnh từ văn bản của bạn",
 			en: "Create image from your text"
 		},

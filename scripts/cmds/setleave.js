@@ -8,7 +8,7 @@ module.exports = {
 		author: "NTKhang",
 		countDown: 5,
 		role: 0,
-		description: {
+		shortDescription: {
 			vi: "Chỉnh sửa nội dung/bật/tắt tin nhắn tạm biệt thành viên rời khỏi nhóm chat của bạn",
 			en: "Edit content/turn on/off leave message when member leave your group chat"
 		},

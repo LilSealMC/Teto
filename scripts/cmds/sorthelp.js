@@ -5,7 +5,7 @@ module.exports = {
 		author: "NTKhang",
 		countDown: 5,
 		role: 0,
-		description: {
+		shortDescription: {
 			vi: "Sắp xếp danh sách help",
 			en: "Sort help list"
 		},

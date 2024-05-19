@@ -26,7 +26,7 @@ module.exports = {
 		author: "NTKhang",
 		countDown: 5,
 		role: 0,
-		description: {
+		shortDescription: {
 			vi: "xem dự báo thời tiết hiện tại và 5 ngày sau",
 			en: "view the current and next 5 days weather forecast"
 		},

@@ -1,11 +1,12 @@
-const { getTime, drive } = global.utils;
+const axios = require("axios");
+const { getTime, drive, getStreamFromURL, getExtFromUrl } = global.utils;
 if (!global.temp.welcomeEvent)
 	global.temp.welcomeEvent = {};
 
 module.exports = {
 	config: {
 		name: "welcome",
-		version: "1.7",
+		version: "1.5",
 		author: "NTKhang",
 		category: "events"
 	},
@@ -26,10 +27,10 @@ module.exports = {
 			session2: "noon",
 			session3: "afternoon",
 			session4: "evening",
-			welcomeMessage: "Thank you for inviting me to the group!\nBot prefix: %1\nTo view the list of commands, please enter: %1help",
+			welcomeMessage: "𝗕𝗢𝗧 𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗲𝗱\nボット接続\n────────\nHi Im 𝗞𝗮𝘀𝗮𝗻𝗲 𝗧𝗲𝘁𝗼, Thank you for inviting me to the Group Chat(≧▽≦)\n────────\n 𝗣𝗿𝗲𝗳𝗶𝘅【 %1 】\n────────\n【Use %1help to open the list of commands】\n────────\n良い一日を過ごしてください(≧▽≦)！\n────────\n",
 			multiple1: "you",
 			multiple2: "you guys",
-			defaultWelcomeMessage: `Hello {userName}.\nWelcome {multiple} to the chat group: {boxName}\nHave a nice {session} 😊`
+			defaultWelcomeMessage: `𝗪𝗲𝗹𝗰𝗼𝗺𝗲\n歓迎\n────────\n{userName} Joined in 【{boxName}】\n────────\n“Hello {userName}(ㆁωㆁ), Welcome to 【{boxName}】”\n────────\n“私たちはあなたがバゲットを購入したことを願っています。(≧▽≦)”\n────────\n`
 		}
 	},
 
@@ -45,8 +46,8 @@ module.exports = {
 				if (dataAddedParticipants.some((item) => item.userFbId == api.getCurrentUserID())) {
 					if (nickNameBot)
 						api.changeNickname(nickNameBot, threadID, api.getCurrentUserID());
-					return message.send(getLang("welcomeMessage", prefix));
-				}
+					return message.send(getLang("welcomeMessage", prefix)); 
+        }         
 				// if new member:
 				if (!global.temp.welcomeEvent[threadID])
 					global.temp.welcomeEvent[threadID] = {
@@ -54,18 +55,15 @@ module.exports = {
 						dataAddedParticipants: []
 					};
 
-				// push new member to array
 				global.temp.welcomeEvent[threadID].dataAddedParticipants.push(...dataAddedParticipants);
-				// if timeout is set, clear it
 				clearTimeout(global.temp.welcomeEvent[threadID].joinTimeout);
 
-				// set new timeout
 				global.temp.welcomeEvent[threadID].joinTimeout = setTimeout(async function () {
+					const dataAddedParticipants = global.temp.welcomeEvent[threadID].dataAddedParticipants;
 					const threadData = await threadsData.get(threadID);
+					const dataBanned = threadData.data.banned_ban || [];
 					if (threadData.settings.sendWelcomeMessage == false)
 						return;
-					const dataAddedParticipants = global.temp.welcomeEvent[threadID].dataAddedParticipants;
-					const dataBanned = threadData.data.banned_ban || [];
 					const threadName = threadData.threadName;
 					const userName = [],
 						mentions = [];

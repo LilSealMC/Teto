@@ -5,7 +5,7 @@ module.exports = {
 		author: "NTKhang",
 		countDown: 5,
 		role: 1,
-		description: {
+		shortDescription: {
 			vi: "Kick thành viên khỏi box chat",
 			en: "Kick member out of chat box"
 		},

@@ -47,7 +47,7 @@ module.exports = {
 			confirmThisThread: "Please react to this message to confirm change prefix in your box chat",
 			successGlobal: "Changed prefix of system bot to: %1",
 			successThisThread: "Changed prefix in your box chat to: %1",
-			myPrefix: "𝗣𝗿𝗲𝗳𝗶𝘅\n接頭辞\n────────\nHeres my prefix ─> [ %2 ] \n────────\n【Use ^𝗵𝗲𝗹𝗽 to open list of commands】\n────────"
+			myPrefix: "𝗣𝗿𝗲𝗳𝗶𝘅\n接頭辞\n────────\nHeres my prefix ─> [ %2 ] \n────────\n【Use %2help to open list of commands】\n────────"
 		}
 	},
 

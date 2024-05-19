@@ -25,7 +25,7 @@ module.exports = {
 			session4: "evening",
 			leaveType1: "𝗹𝗲𝗳𝘁",
 			leaveType2: "was 𝗸𝗶𝗰𝗸𝗲𝗱",
-			defaultLeaveMessage: "𝗚𝗼𝗼𝗱𝗯𝘆𝗲!\nさようなら!\n────────\n{userName} {type}\n─────────\n“Goodbye {userName}, We hope you enjoy staying in 【{boxName}】 ಥ‿ಥ”\n─────────\nさようならಥ‿ಥ！\n─────────\n"
+			defaultLeaveMessage: "𝗚𝗼𝗼𝗱𝗯𝘆𝗲\nさようなら!\n────────\n{userName} {type}\n─────────\n“Goodbye {userName}, We hope you enjoy staying in 【{boxName}】 ಥ‿ಥ”\n─────────\nさようならಥ‿ಥ！\n─────────\n"
 		}
 	},
 

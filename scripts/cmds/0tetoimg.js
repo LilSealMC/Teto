@@ -2,8 +2,8 @@ const axios = require('axios');
 
 module.exports = {
   config: {
-    name: "𝘁𝗲𝘁𝗼",
-    aliases: ["kasane", "teto"],
+    name: "𝘁𝗲𝘁𝗼𝗶𝗺𝗴",
+    aliases: ["tetoimg"],
     version: "1.0",
     author: "CiL ",
     countDown: 5,

@@ -16,7 +16,7 @@ module.exports = {
 		author: "NTKhang",
 		countDown: 5,
 		role: 0,
-		description: {
+		shortDescription: {
 			vi: "Xem ảnh từ Hubble",
 			en: "View Hubble images"
 		},

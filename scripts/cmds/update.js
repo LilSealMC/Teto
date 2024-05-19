@@ -9,7 +9,7 @@ module.exports = {
 		version: "1.5",
 		author: "Chat GPT, NTKhang",
 		role: 2,
-		description: {
+		shortDescription: {
 			en: "Check for and install updates for the chatbot.",
 			vi: "Kiểm tra và cài đặt phiên bản mới nhất của chatbot trên GitHub."
 		},

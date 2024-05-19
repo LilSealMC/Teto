@@ -7,7 +7,7 @@ module.exports = {
 		author: "NTKhang",
 		countDown: 5,
 		role: 2,
-		description: {
+		shortDescription: {
 			vi: "Sao lưu dữ liệu của bot (threads, users, dashboard, globalData)",
 			en: "Backup data of bot (threads, users, dashboard, globalData)"
 		},

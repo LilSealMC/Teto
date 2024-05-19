@@ -1,13 +1,13 @@
 module.exports = {
 	config: {
-		name: "𝗮𝗻𝗻𝗶𝘃𝗲𝗿𝘀𝗮𝗿𝘆",
+		name: "𝗯𝗶𝗿𝘁𝗵𝗱𝗮𝘆",
 		version: "1.0",
 		author: "CiL",
-    aliases: ["anniversary"],
+    aliases: ["birthday"],
 		countDown: 5,
 		role: 0,
 		category: "dates",
-    shortDescription: "See Teto's anniversary",
+    shortDescription: "See Teto's birthday",
 		longDescription: "",
 		guide: {
 			vi: "{p}{n}",
@@ -22,6 +22,6 @@ module.exports = {
     const hours = Math.floor( (t/(1000*60*60)) % 24 );
     const days = Math.floor( t/(1000*60*60*24) );
 
-    return api.sendMessage(`𝗔𝗻𝗻𝗶𝘃𝗲𝗿𝘀𝗮𝗿𝘆\n────────\nRemaining days for Crypton Media to celebrate Teto's anniversary\n────────\n𝗗𝗮𝘆𝘀: ${days}\n𝗛𝗼𝘂𝗿𝘀: ${hours}\n𝗠𝗶𝗻𝘂𝘁𝗲𝘀: ${minutes}\n𝗦𝗲𝗰𝗼𝗻𝗱: ${seconds}\n────────\n`, event.threadID, event.messageID);
+    return api.sendMessage(`𝗕𝗶𝗿𝘁𝗵𝗱𝗮𝘆\n────────\nRemaining days for TwinDrill to celebrate Teto's birthday\n────────\n•𝗗𝗮𝘆𝘀: ${days}\n•𝗛𝗼𝘂𝗿𝘀: ${hours}\n•𝗠𝗶𝗻𝘂𝘁𝗲𝘀: ${minutes}\n•𝗦𝗲𝗰𝗼𝗻𝗱: ${seconds}\n────────\n`, event.threadID, event.messageID);
 	}
 };

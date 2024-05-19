@@ -6,7 +6,7 @@ module.exports = {
 		author: "NTKhang",
 		countDown: 5,
 		role: 0,
-		description: {
+		shortDescription: {
 			vi: "Tag thành viên theo nhóm",
 			en: "Tag members by group"
 		},

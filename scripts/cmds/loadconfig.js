@@ -8,7 +8,7 @@ module.exports = {
 		author: "NTKhang",
 		countDown: 5,
 		role: 2,
-		description: {
+		shortDescription: {
 			vi: "Load lại config của bot",
 			en: "Reload config of bot"
 		},

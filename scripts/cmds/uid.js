@@ -8,7 +8,7 @@ module.exports = {
 		author: "NTKhang",
 		countDown: 5,
 		role: 0,
-		description: {
+		shortDescription: {
 			vi: "Xem user id facebook của người dùng",
 			en: "View facebook user id of user"
 		},

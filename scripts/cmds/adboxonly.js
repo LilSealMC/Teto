@@ -6,7 +6,7 @@ module.exports = {
 		author: "NTKhang",
 		countDown: 5,
 		role: 1,
-		description: {
+		shortDescription: {
 			vi: "bật/tắt chế độ chỉ quản trị của viên nhóm mới có thể sử dụng bot",
 			en: "turn on/off only admin box can use bot"
 		},

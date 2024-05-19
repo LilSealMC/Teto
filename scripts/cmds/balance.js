@@ -6,7 +6,7 @@ module.exports = {
 		author: "NTKhang",
 		countDown: 5,
 		role: 0,
-		description: {
+		shortDescription: {
 			vi: "xem số tiền hiện có của bạn hoặc người được tag",
 			en: "view your money or the money of the tagged person"
 		},

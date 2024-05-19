@@ -8,7 +8,7 @@ module.exports = {
 		author: "NTKhang",
 		countDown: 5,
 		role: 2,
-		description: {
+		shortDescription: {
 			vi: "Đồng bộ dữ liệu từ json sang sqlite",
 			en: "Synchronize data from json to sqlite"
 		},

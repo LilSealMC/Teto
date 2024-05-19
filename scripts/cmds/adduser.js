@@ -8,7 +8,7 @@ module.exports = {
 		author: "NTKhang",
 		countDown: 5,
 		role: 1,
-		description: {
+		shortDescription: {
 			vi: "Thêm thành viên vào box chat của bạn",
 			en: "Add user to box chat of you"
 		},
